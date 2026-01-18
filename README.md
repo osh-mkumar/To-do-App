@@ -1,6 +1,6 @@
 # 📝 To-Do App (Kanban Board)
 
-A **full-stack Kanban To-Do application** built with **React and Firebase**, featuring authentication, per-user task storage, real-time updates, and drag-and-drop task management.
+A **full-stack responsive Kanban To-Do application** built with **React and Firebase**, featuring authentication, per-user task storage, real-time updates, and drag-and-drop task management.
 
 ## [Try it here!](https://to-do-app-11f4d.web.app)
 ---
@@ -44,6 +44,11 @@ todo-app/
 ├── package.json
 └── README.md
 ```
+## How it looks!
+<img width="959" height="468" alt="image" src="https://github.com/user-attachments/assets/b9dc31d0-8d86-4028-88ca-d37069a62f28" />
+<img width="959" height="470" alt="image" src="https://github.com/user-attachments/assets/cc52b2b5-45c5-4d66-b9f8-03ecc63cb701" />
+<img width="959" height="470" alt="image" src="https://github.com/user-attachments/assets/5feed0e0-79b6-4c7e-b6aa-de06542a7c0a" />
+<img width="959" height="473" alt="image" src="https://github.com/user-attachments/assets/87f174c1-266c-4a9f-baa8-ab1cf6242f93" />
 
 ---
 
