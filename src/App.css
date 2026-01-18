@@ -260,3 +260,85 @@ button {
 .completed-task {
   background-color: #e5e7eb;
 }
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets & below */
+@media (max-width: 1024px) {
+  .board {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .app h1 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .app {
+    padding: 20px 16px;
+  }
+
+  .app h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+
+  /* Input & button stack */
+  .app input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .app button {
+    width: 100%;
+  }
+
+  /* Board becomes vertical */
+  .board {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .column {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .column h2 {
+    font-size: 20px;
+  }
+
+  .task {
+    padding: 12px 14px;
+  }
+
+  .delete-btn {
+    font-size: 18px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .app h1 {
+    font-size: 26px;
+  }
+
+  .task span {
+    font-size: 14px;
+  }
+}
+
+/* Improve touch dragging on mobile */
+.task {
+  touch-action: none;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
