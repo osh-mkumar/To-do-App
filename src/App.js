@@ -257,11 +257,7 @@ function Column({ title, status, tasks, moveTask }) {
   const filtered = tasks.filter((t) => t.status === status);
 
   return (
-    <div
-      className="column"
-      onDragOver={allowDrop}
-      onDrop={onDrop}
-    >
+    <div className="column" onDragOver={allowDrop} onDrop={onDrop}>
       <h2>{title}</h2>
 
       {filtered.length === 0 && (
@@ -273,14 +269,25 @@ function Column({ title, status, tasks, moveTask }) {
       {filtered.map((t) => (
         <div
           key={t.id}
-          className={`task ${status === "completed" ? "completed-task" : ""}`}
+          className={`task ${t.status === "completed" ? "completed-task" : ""}`}
           draggable
           onDragStart={(e) => {
             e.dataTransfer.setData("id", t.id);
             e.dataTransfer.effectAllowed = "move";
           }}
         >
-      <span className="task-text">{t.text}</span>
+          <span className="task-text">{t.text}</span>
+
+          {/* MOBILE DROPDOWN */}
+          <select
+            className="status-select"
+            value={t.status}
+            onChange={(e) => moveTask(t.id, e.target.value)}
+          >
+            <option value="todo">To Do</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
 
           <button
             className="delete-btn"
@@ -293,5 +300,6 @@ function Column({ title, status, tasks, moveTask }) {
     </div>
   );
 }
+
 
 export default App;

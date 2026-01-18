@@ -137,17 +137,37 @@ button {
 .task {
   background-color: #f9fafb;
   color: #0f172a;
+
   margin: 12px 0;
   padding: 14px 16px;
-  border-radius: 12px;
+  border-radius: 14px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  cursor: grab;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  gap: 12px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Delete button*/
+
+.task-text {
+  flex: 1;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ❌ always at the right */
+.delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+
 .delete-btn {
   background: transparent;
   border: none;
@@ -332,6 +352,20 @@ button {
     font-size: 14px;
   }
 }
+@media (max-width: 480px) {
+  .task {
+    flex-wrap: wrap;
+  }
+
+  .task-text {
+    width: 100%;
+  }
+
+  .mobile-actions {
+    margin-top: 6px;
+  }
+}
+
 
 /* Improve touch dragging on mobile */
 .task {
@@ -341,4 +375,50 @@ button {
 /* Prevent horizontal scroll */
 body {
   overflow-x: hidden;
+}
+
+/* Mobile move buttons */
+.mobile-actions {
+  display: none;
+  gap: 6px;
+}
+
+/* Show on mobile only */
+@media (max-width: 768px) {
+  .mobile-actions {
+    display: flex;
+  }
+
+  .task {
+    cursor: default;
+  }
+}
+
+.status-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  background: #f1f5f9;
+  font-size: 13px;
+}
+
+/* Hide dropdown on desktop */
+.status-select {
+  display: none;
+}
+
+/* Show dropdown on mobile */
+@media (max-width: 768px) {
+  .status-select {
+    display: block;
+  }
+
+  .task {
+    flex-wrap: wrap;
+  }
+
+  .task-text {
+    width: 100%;
+    margin-bottom: 6px;
+  }
 }
